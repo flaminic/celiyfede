@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, make_response
 from database import Database
 from flask_basicauth import BasicAuth
+import StringIO
+import csv
 import os
 
 app = Flask(__name__)
@@ -80,6 +82,21 @@ def get_all_rsvp():
     rows = database.get_all_people();
     return render_template("allRsvp.html", rows=rows)
 
+
+@app.route('/download-rsvp')
+@basic_auth.required
+def download():
+    si = StringIO.StringIO()
+    cw = csv.writer(si)
+    cw.writerow(['id', 'firstName', 'lastName', 'email', 'howmany', 'message',])
+
+    rows = database.get_all_people();
+    for row in rows:
+        cw.writerow([row['id'], row['firstName'], row['lastName'], row['email'], row['howmany'], row['message'],])
+    output = make_response(si.getvalue())
+    output.headers["Content-Disposition"] = "attachment; filename=rsvp.csv"
+    output.headers["Content-type"] = "text/csv"
+    return output
 
 if __name__ == "__main__":
     app.run()

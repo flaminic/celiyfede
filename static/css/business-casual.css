@@ -253,3 +253,16 @@ p {
 .font-weight-light {
   font-weight: 100 !important;
 }
+
+.bordered-list-item {
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  background-color: #fffaa9;
+  border: 0.25rem solid darkblue;
+}
+
+
+.bordered-list-line {
+  margin: 0;
+}

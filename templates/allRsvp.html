@@ -1,6 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Celi y Fede </title>
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/business-casual.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
 {% for row in rows %}
-    <div>
-         <p>{{ row["id"] }}, {{ row["firstName"] }}, {{ row["lastName"] }}, {{ row["email"] }}, {{ row["howmany"] }}, {{ row["message"] }} </p>
+    <div class='bordered-list-item'>
+         <p class="bordered-list-line"> ID: {{ row["id"] }}</p>
+         <p class="bordered-list-line">
+         FIRST NAME: {{ row["firstName"] }}
+         LAST NAME: {{ row["lastName"] }}</p>
+         <p class="bordered-list-line"> EMAIL: {{ row["email"] }}
+         HOW MANY: {{ row["howmany"] }}</p>
+         <p class="bordered-list-line"> MESSAGE: {{ row["message"] }} </p>
+         <p class="bordered-list-line"><a href={{ '/rsvp/' + row["id"]}} > EDIT</a></p>
     </div>
 {% endfor %}
+
+</body>
+</html>
 
