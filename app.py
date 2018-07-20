@@ -1,8 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for
 from database import Database
+from flask_basicauth import BasicAuth
+import os
 
 app = Flask(__name__)
 database = Database()
+
+app.config['BASIC_AUTH_USERNAME'] = os.getenv("USERNAME") or "test"
+app.config['BASIC_AUTH_PASSWORD'] = os.getenv("PASSWORD") or "password"
+
+basic_auth = BasicAuth(app)
 
 @app.route("/")
 def home():
@@ -65,7 +72,13 @@ def modify_person(person_id):
             howmany = howmany,
             message = message,
         )
-    return redirect(url_for('thanks', person_id=person_id))
+    return redirect(url_for('thanks', person_id=person_id))\
+
+@app.route("/all-rsvp")
+@basic_auth.required
+def get_all_rsvp():
+    rows = database.get_all_people();
+    return render_template("allRsvp.html", rows=rows)
 
 
 if __name__ == "__main__":
