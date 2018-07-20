@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Business Casual - Start Bootstrap Theme</title>
+    <title>Celi y Fede </title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -68,31 +68,35 @@
                   <span class="section-heading-upper">Let us know if you can make it</span>
                   <span class="section-heading-lower">Te esperamos!</span>
                 </h2>
-                <p action = "/people" method = "post">
+                <form action = "/register" method = "post">
                     <p>
                         <b>Nombre :</b>
-                        <input type = "text" name = "firstName" />
+                        <input type = "text" name = "firstName" required />
                     </p>
                     <p>
                         <b>Appellido :</b>
-                        <input type = "text" name = "lastName" />
+                        <input type = "text" name = "lastName" required />
+                    </p>
+                    <p>
+                        <b>Email :</b>
+                        <input type = "text" name = "email" required />
                     </p>
 
                      <p>
                         <b>Con cuántas personas vienes</b>
                     </p>
                     <p>
-                         <input type="radio" name="people" id="none" value="0">
+                         <input type="radio" name="people" id="none" value="0" required>
                          <label class='mr-sm-2' for="uno">No puedo venir</label>
-                         <input type="radio" name="people" id="uno" value="1">
+                         <input type="radio" name="people" id="uno" value="1" required>
                          <label class='mr-sm-2' for="uno">Solo yo</label>
-                         <input type="radio" name="people" id="dos" value="2">
+                         <input type="radio" name="people" id="dos" value="2" required>
                          <label class='mr-sm-2' for="dos">+1</label>
-                         <input type="radio" name="people" id="trees" value="3">
+                         <input type="radio" name="people" id="trees" value="3" required>
                          <label class='mr-sm-2' for="trees">+2</label>
-                         <input type="radio" name="people" id="cuatro" value="4">
+                         <input type="radio" name="people" id="cuatro" value="4" required>
                          <label class='mr-sm-2' for="cuatro">+3</label>
-                         <input type="radio" name="people" id="mas" value="mas">
+                         <input type="radio" name="people" id="mas" value="mas" required>
                          <label class='mr-sm-2' for="mas">mas</label>
                     </p>
                     <p>
@@ -115,7 +119,7 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="/static/vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 

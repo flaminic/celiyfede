@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -16,7 +16,12 @@ def bodas():
 
 @app.route("/rsvp")
 def rsvp():
-    return render_template('rsvp.html')
+    return render_template('rsvp.html')\
+
+@app.route("/register", methods=['POST'])
+def register():
+    if request.method == 'POST':
+        return render_template("thanks.html")
 
 
 if __name__ == "__main__":
