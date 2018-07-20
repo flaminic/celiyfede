@@ -5,9 +5,8 @@
  */
 body {
   font-family: 'Lora';
-  background: url("../img/wwww.jpg");
+  background: url("/static/img/wwww.jpg");
   background-attachment: fixed;
-  background-position: center;
   background-size: cover;
 }
 
@@ -30,11 +29,11 @@ p {
 
 .site-heading {
   margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   line-height: 1;
   font-family: 'Raleway';
-  color: #fff010;
+  color: #feba2a;
 }
 
 .site-heading .site-heading-upper {
