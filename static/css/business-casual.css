@@ -34,6 +34,7 @@ p {
   text-transform: uppercase;
   line-height: 1;
   font-family: 'Raleway';
+  color: #fff010;
 }
 
 .site-heading .site-heading-upper {
@@ -118,7 +119,7 @@ p {
 
 @media (min-width: 992px) {
   .intro .intro-img {
-    width: 75%;
+    width: 60%;
     float: right;
   }
   .intro .intro-text {

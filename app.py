@@ -10,10 +10,6 @@ def home():
 def about():
     return  render_template('about.html')
 
-@app.route("/hola")
-def ciao():
-    return 'CIAO BELLA'
-
 
 if __name__ == "__main__":
     app.run()
