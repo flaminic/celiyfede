@@ -59,17 +59,47 @@
 
     <section class="page-section about-heading">
       <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="/static/img/baile.jpg" alt="">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="/static/img/rsvp.jpg" alt="">
         <div class="about-heading-content">
           <div class="row">
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
                 <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                  <span class="section-heading-lower">About Our Cafe</span>
+                  <span class="section-heading-upper">Let us know if you can make it</span>
+                  <span class="section-heading-lower">Te esperamos!</span>
                 </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
+                <p action = "/people" method = "post">
+                    <p>
+                        <b>Nombre :</b>
+                        <input type = "text" name = "firstName" />
+                    </p>
+                    <p>
+                        <b>Appellido :</b>
+                        <input type = "text" name = "lastName" />
+                    </p>
+
+                     <p>
+                        <b>Con cuántas personas vienes</b>
+                    </p>
+                    <p>
+                         <input type="radio" name="people" id="none" value="0">
+                         <label class='mr-sm-2' for="uno">No puedo venir</label>
+                         <input type="radio" name="people" id="uno" value="1">
+                         <label class='mr-sm-2' for="uno">Solo yo</label>
+                         <input type="radio" name="people" id="dos" value="2">
+                         <label class='mr-sm-2' for="dos">+1</label>
+                         <input type="radio" name="people" id="trees" value="3">
+                         <label class='mr-sm-2' for="trees">+2</label>
+                         <input type="radio" name="people" id="cuatro" value="4">
+                         <label class='mr-sm-2' for="cuatro">+3</label>
+                         <input type="radio" name="people" id="mas" value="mas">
+                         <label class='mr-sm-2' for="mas">mas</label>
+                    </p>
+                    <p>
+                        <textarea name="message" rows="3" cols="50">Deja un mensaje!</textarea>
+                     </p>
+                     <p><input class='buttonlike' type = "submit" value = "RSVP" /></p>
+                 </form>
               </div>
             </div>
           </div>
@@ -79,7 +109,7 @@
 
     <footer class="footer text-faded text-center py-5">
       <div class="container">
-        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 small">Copyright &copy; Fla Belu 2018</p>
       </div>
     </footer>
 
