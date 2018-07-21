@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, make_response
 from database import Database
 from flask_basicauth import BasicAuth
-import StringIO
+import io
 import csv
 import os
 
@@ -86,7 +86,7 @@ def get_all_rsvp():
 @app.route('/download-rsvp')
 @basic_auth.required
 def download():
-    si = StringIO.StringIO()
+    si = io.StringIO()
     cw = csv.writer(si)
     cw.writerow(['id', 'firstName', 'lastName', 'email', 'howmany', 'message',])
 
