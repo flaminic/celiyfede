@@ -262,7 +262,9 @@ p {
   border: 0.25rem solid darkblue;
 }
 
-
 .bordered-list-line {
   margin: 0;
+}
+.rsvp-text-area{
+  width: 70%;
 }
